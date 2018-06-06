@@ -16,8 +16,6 @@ describe('LoginComponent', () => {
   let fixture: ComponentFixture<LoginComponent>;
 
   let submit: DebugElement;
-  let username: DebugElement;
-  let password: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
