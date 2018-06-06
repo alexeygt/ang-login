@@ -21,14 +21,13 @@ export class LoginComponent implements OnInit {
     return config[propertyName];
   }
 
-  constructor(formBuilder: FormBuilder) {
-    this.loginForm = formBuilder.group({
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
-  }
-
-  ngOnInit() {
   }
 
   onSubmit() {
@@ -38,9 +37,9 @@ export class LoginComponent implements OnInit {
 
     this.model = this.loginForm.value;
 
-    alert(JSON.stringify(this.model));
+    console.log(this.model);
 
-    this.loginForm.reset();
+    this.loginForm.reset({ username: '', password: '' });
   }
 
   errorMessage(controlName: string) {
