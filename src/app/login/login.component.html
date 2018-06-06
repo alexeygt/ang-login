@@ -1,11 +1,18 @@
-<form>
+<form fxLayout="column" fxLayoutGap="24px" fxLayoutAlign="stretch">
+  <div class="ally-logo" fxFlexAlign="end"></div>
+
+  <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="start center" class="ally-primary-color">
+    <mat-icon>lock</mat-icon>
+    <div>Login</div>
+  </div>
+
   <mat-form-field>
-    <input matInput placeholder="Username">
+    <input matInput placeholder="Username" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input type="password" matInput placeholder="Password">
+    <input type="password" matInput placeholder="Password" required>
   </mat-form-field>
 
-  <button mat-raised-button color="primary">Login</button>
+  <button fxFlexAlign="end" mat-raised-button color="primary">Log In</button>
 </form>
