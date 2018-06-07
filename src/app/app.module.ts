@@ -13,12 +13,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './components/material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

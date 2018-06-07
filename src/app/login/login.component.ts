@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { UserLogin } from '../models/user-login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
     return config[propertyName];
   }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -39,7 +40,8 @@ export class LoginComponent implements OnInit {
 
     console.log(this.model);
 
-    this.loginForm.reset({ username: '', password: '' });
+    // this.loginForm.reset({ username: '', password: '' });
+    this.router.navigate(['/home']);
   }
 
   errorMessage(controlName: string) {
